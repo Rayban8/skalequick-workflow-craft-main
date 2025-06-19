@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zen Design System Color Palette */
+@layer base {
+  :root {
+    /* Light Mode Variables */
+    --background: 0 0% 95%; /* Zen Paper Light #f2f0e3 */
+    --foreground: 210 8% 18%; /* Zen Dark #2e2e2e */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 8% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 8% 18%;
+
+    --primary: 210 8% 18%; /* Zen Dark */
+    --primary-foreground: 0 0% 95%;
+
+    --secondary: 220 14% 96%; /* Gray 100 */
+    --secondary-foreground: 210 8% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%; /* Gray 500 */
+
+    --accent: 15 88% 65%; /* Coral #f76f53 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 15 88% 65%; /* Coral */
+
+    --radius: 0.5rem;
+
+    /* Custom Zen Colors */
+    --zen-paper: 38 11% 95%; /* #f2f0e3 */
+    --zen-dark: 210 8% 18%; /* #2e2e2e */
+    --coral: 15 88% 65%; /* #f76f53 */
+    --coral-variant-1: 12 78% 50%; /* #e3401f */
+    --coral-variant-2: 12 72% 42%; /* #bf3316 */
+    --coral-variant-3: 21 71% 16%; /* #471308 */
+    --coral-variant-4: 33 91% 63%; /* #f7a74b */
+    --coral-variant-5: 17 96% 70%; /* #fe846b */
+    --zen-blue: 228 88% 68%; /* #6287f5 */
+  }
+
+  .dark {
+    /* Dark Mode Variables */
+    --background: 0 0% 12%; /* Zen Paper Dark #1f1f1f */
+    --foreground: 39 8% 82%; /* Zen Dark Light Text #d1cfc0 */
+
+    --card: 0 0% 12%;
+    --card-foreground: 39 8% 82%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 39 8% 82%;
+
+    --primary: 39 8% 82%; /* Zen Dark Light Text */
+    --primary-foreground: 0 0% 12%;
+
+    --secondary: 0 0% 15%; /* Slightly lighter than background */
+    --secondary-foreground: 39 8% 82%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 215 16% 47%; /* Gray 500 */
+
+    --accent: 15 88% 65%; /* Coral - same in both modes */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 15 88% 65%; /* Coral */
+
+    /* Custom Zen Colors for Dark Mode */
+    --zen-paper: 0 0% 12%; /* #1f1f1f */
+    --zen-dark: 39 8% 82%; /* #d1cfc0 */
+    --coral: 15 88% 65%; /* #f76f53 - same in both modes */
+    --coral-variant-1: 12 78% 50%; /* #e3401f */
+    --coral-variant-2: 12 72% 42%; /* #bf3316 */
+    --coral-variant-3: 21 71% 16%; /* #471308 */
+    --coral-variant-4: 33 91% 63%; /* #f7a74b */
+    --coral-variant-5: 17 96% 70%; /* #fe846b */
+    --zen-blue: 228 88% 68%; /* #6287f5 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 500;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .font-semibold {
+    font-weight: 600;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+}
+
+/* Custom Utility Classes */
+.coral-gradient {
+  background: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--coral-variant-4)) 50%, hsl(var(--coral-variant-5)) 100%);
+}
+
+.zen-gradient {
+  background: linear-gradient(135deg, hsl(var(--zen-paper)) 0%, hsl(var(--background)) 50%, hsl(var(--muted)) 100%);
+}
+
+.dark .zen-gradient {
+  background: linear-gradient(135deg, hsl(var(--zen-paper)) 0%, hsl(var(--background)) 50%, hsl(var(--secondary)) 100%);
+}
+
+.coral-glow {
+  box-shadow: 0 0 20px hsla(var(--coral), 0.3);
+}
+
+.text-coral {
+  color: hsl(var(--coral));
+}
+
+.bg-coral {
+  background-color: hsl(var(--coral));
+}
+
+.border-coral {
+  border-color: hsl(var(--coral));
+}
+
+.hover\:bg-coral:hover {
+  background-color: hsl(var(--coral));
+}
+
+.hover\:text-coral:hover {
+  color: hsl(var(--coral));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--coral-variant-4)) 50%, hsl(var(--coral-variant-5)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
